@@ -1,0 +1,664 @@
+/* Estilos principales para Le Petit Olivier - Sin Django */
+
+:root {
+    --primary: #2c5530;      /* Verde oliva principal */
+    --secondary: #8a9a5b;    /* Verde claro */
+    --accent: #d4a574;       /* Beige/marrón claro */
+    --light: #f8f5f0;        /* Fondo claro */
+    --dark: #2c3e50;         /* Texto oscuro */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark);
+    background-color: #fff;
+    line-height: 1.6;
+    padding-top: 76px; /* Para navbar fija */
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Increase title size */
+h1 {
+    font-size: 3.45rem; /* Increased by 15% from 3rem */
+}
+
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+
+/* Navegación */
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.navbar.scrolled {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Logo size */
+.navbar-brand img {
+    height: 95px;
+}
+
+.brand-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.07rem; /* Increased by 15% from 1.8rem */
+    margin-left: 10px;
+    color: var(--primary);
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    margin: 0 10px;
+    color: var(--dark) !important;
+    transition: color 0.3s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color: #1a291c;
+    width: 100%;
+}
+
+/* Tarjetas de Producto */
+
+.product-card {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 450px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}
+
+.product-image {
+        width: 100%;
+        height: 180px;
+        max-height: 30vw;
+        min-height: 120px;
+        object-fit: contain;
+        background: #fff;
+        display: block;
+        margin: 0 auto;
+        transition: transform 0.5s;
+        padding: 16px 0 12px 0;
+        border-radius: 0;
+        box-shadow: none;
+}
+
+@media (max-width: 991px) {
+    .product-image {
+        height: 140px;
+        min-height: 90px;
+        max-height: 40vw;
+        padding: 10px 0 8px 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .product-image {
+        height: 90px;
+        min-height: 60px;
+        max-height: 60vw;
+        padding: 6px 0 6px 0;
+    }
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 16px 14px 14px 14px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: var(--dark);
+    min-height: 2.5em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.product-title small {
+    font-size: 0.9em;
+    color: #888;
+    font-weight: 400;
+}
+
+.product-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    min-height: 8.4em;
+    margin-bottom: 10px !important;
+    font-size: 0.93em;
+    color: #555;
+    flex: 1 1 auto;
+}
+
+.product-card .btn-group {
+    margin-top: auto;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.product-price .original {
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    padding: 12px 30px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #244427;
+    border-color: #244427;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 85, 48, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+    padding: 12px 30px;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 5px 15px rgba(44, 85, 48, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Pagination Styles */
+.pagination {
+    --bs-pagination-active-bg: var(--primary);
+    --bs-pagination-active-border-color: var(--primary);
+    --bs-pagination-color: var(--primary);
+    --bs-pagination-hover-color: var(--primary);
+    --bs-pagination-focus-color: var(--primary);
+}
+
+.page-link {
+    color: var(--primary);
+    border: none;
+    margin: 0 5px;
+    border-radius: 20px !important; /* Forma de píldora en lugar de círculo forzado */
+    min-width: 40px; /* Ancho mínimo para números */
+    height: 40px;
+    padding: 0 15px; /* Espaciado para texto como Anterior/Siguiente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.page-link:hover {
+    background-color: #e9ecef;
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 6px rgba(44, 85, 48, 0.2);
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    background-color: transparent;
+}
+
+/* Testimonios */
+.testimonial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Sección de Lealtad */
+.loyalty-section {
+    background-color: var(--light);
+}
+
+.loyalty-card {
+    background: white;
+    border: 2px solid var(--accent);
+}
+
+.loyalty-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.loyalty-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #FFFFFF !important;
+    color: #6C757D !important;
+    border-top: 1px solid #bdcabe !important;
+}
+
+.footer h5, .footer h6 {
+    color: #006c40 !important;
+    font-weight: 600;
+}
+
+.footer p, .footer span, .footer li {
+    color: #6C757D !important;
+}
+
+.footer a, .footer .text-white-50 {
+    color: #6C757D !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #006c40 !important;
+    text-decoration: underline;
+}
+
+.footer .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #E8F5E9 !important;
+    color: #006c40 !important;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s;
+}
+
+.footer .social-icons a:hover {
+    background: #006c40 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-3px);
+}
+
+.footer hr, .footer .bg-white-50 {
+    border-color: #bdcabe !important;
+    opacity: 1;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    
+    .brand-name {
+        font-size: 1.4rem;
+    }
+    
+    body {
+        padding-top: 120px; /* Más espacio para banner + navbar móvil */
+    }
+    
+    .discount-banner {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+}
+
+/* Modal personalizado */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    background-color: var(--light);
+    border-radius: 15px 15px 0 0;
+}
+
+/* Botones de filtro personalizados */
+.filter-btn {
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: transparent;
+    border-radius: 25px; /* Más redondeado para estética natural */
+    padding: 8px 20px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn:active,
+.filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 4px 6px rgba(44, 85, 48, 0.2);
+}
+
+.filter-btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba(44, 85, 48, 0.25);
+}
+
+/* Estilos para página de historia */
+.history-content p {
+    text-align: justify;
+}
+
+/* Certificaciones */
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.certification-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: var(--light);
+    border-radius: 50px;
+    border: 1px solid rgba(44, 85, 48, 0.1);
+    transition: all 0.3s ease;
+}
+
+.certification-item:hover {
+    transform: translateY(-2px);
+    background-color: white;
+    border-color: var(--primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.certification-item i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.certification-item span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+/* Hero Carousel Custom Styles */
+#heroCarousel {
+    width: 100%;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+#heroCarousel .carousel-item {
+    position: relative;
+    height: 580px;
+}
+
+#heroCarousel .carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.35) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#heroCarousel .carousel-item img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0;
+}
+
+/* Superimposed Overlay Content */
+.hero-overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    padding: 20px;
+    pointer-events: none;
+}
+
+.hero-overlay-content .container {
+    pointer-events: auto;
+}
+
+.hero-card {
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+}
+
+.hero-card h1 {
+    color: #ffffff !important;
+    font-size: 3.2rem;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+    font-family: var(--font-heading);
+}
+
+.hero-card p.lead {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.btn-hero-primary {
+    background-color: var(--primary);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.4);
+}
+
+.btn-hero-primary:hover {
+    background-color: #386b3e;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(44, 85, 48, 0.6);
+}
+
+.btn-hero-outline {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-outline:hover {
+    background-color: #ffffff;
+    color: var(--primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+#heroCarousel .carousel-indicators {
+    z-index: 10;
+    margin-bottom: 25px;
+}
+
+#heroCarousel .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    background-color: #ffffff;
+    opacity: 0.6;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#heroCarousel .carousel-indicators .active {
+    opacity: 1;
+    width: 32px;
+    border-radius: 6px;
+    background-color: var(--accent);
+}
+
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+    z-index: 10;
+    width: 8%;
+}
+
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 45%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+#heroCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--primary);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 991px) {
+    #heroCarousel .carousel-item {
+        height: 520px;
+    }
+    .hero-card h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #heroCarousel .carousel-item {
+        height: 580px;
+    }
+}

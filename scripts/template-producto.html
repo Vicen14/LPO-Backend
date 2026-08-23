@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <title>{{NOMBRE}} | Le Petit Olivier</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Vercel Speed Insights -->
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../images/products/Logo-LPO/Le-Petit-Olivier.png" alt="Le Petit Olivier">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products.html?categoria=limpieza-corporal">Ducha y Jabones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products.html?categoria=capilar">Capilar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products.html?categoria=cuidado-facial">Cuidado Facial y Corporal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../history.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../faq.html">Preguntas Frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detalle de Producto -->
+    <main class="container py-5 mt-5">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="../products.html" class="text-decoration-none">Productos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{NOMBRE}}</li>
+            </ol>
+        </nav>
+
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="product-gallery">
+                    <div class="main-image-container mb-3 text-center bg-white p-4 rounded shadow-sm border">
+                        <img src="../{{IMAGEN}}" id="mainProductImage" alt="{{NOMBRE}}" class="img-fluid">
+                    </div>
+                    {{THUMBNAILS}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-details-container h-100 d-flex flex-column">
+                    <span class="badge bg-secondary mb-2 align-self-start">{{TIPO}}</span>
+                    <h1 class="display-5 mb-3">{{NOMBRE}}</h1>
+                    <p class="text-muted fs-5 mb-4">{{CANTIDAD}}</p>
+                    
+                    <!-- Pestañas de información -->
+                    <ul class="nav nav-tabs mb-4" id="productTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="descripcion-tab" data-bs-toggle="tab" data-bs-target="#descripcion" type="button" role="tab" aria-controls="descripcion" aria-selected="true" style="color: var(--primary); font-weight: 500;">Descripción</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="beneficios-tab" data-bs-toggle="tab" data-bs-target="#beneficios" type="button" role="tab" aria-controls="beneficios" aria-selected="false" style="color: var(--primary); font-weight: 500;">Beneficios de uso</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="certificaciones-tab" data-bs-toggle="tab" data-bs-target="#certificaciones" type="button" role="tab" aria-controls="certificaciones" aria-selected="false" style="color: var(--primary); font-weight: 500;">Certificaciones</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content mb-5" id="productTabsContent">
+                        <div class="tab-pane fade show active" id="descripcion" role="tabpanel" aria-labelledby="descripcion-tab">
+                            <p class="lead" style="text-align: justify; font-size: 1.1rem;">{{DESCRIPCION}}</p>
+                        </div>
+                        <div class="tab-pane fade" id="beneficios" role="tabpanel" aria-labelledby="beneficios-tab">
+                            <p class="lead" style="text-align: justify; font-size: 1.1rem;">{{BENEFICIOS}}</p>
+                        </div>
+                        <div class="tab-pane fade" id="certificaciones" role="tabpanel" aria-labelledby="certificaciones-tab">
+                            <div class="certification-grid mt-4">
+                                <div class="certification-item">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Vegano</span>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="fas fa-paw"></i>
+                                    <span>Cruelty Free</span>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="fas fa-tint-slash"></i>
+                                    <span>Sin Siliconas</span>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="fas fa-water"></i>
+                                    <span>Sin Sulfatos</span>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="fas fa-flask"></i>
+                                    <span>Sin Parabenos</span>
+                                </div>
+                                <div class="certification-item">
+                                    <i class="fas fa-seedling"></i>
+                                    <span>Mínimo 95% de ingredientes naturales</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-muted small" style="text-align: justify; font-style: italic;">Nuestros productos cuentan con certificaciones internacionales que garantizan el respeto por el medio ambiente y los animales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-features mt-auto">
+                        <div class="d-flex align-items-center p-3 bg-light rounded">
+                            <i class="fas fa-leaf text-success me-3 fs-4"></i>
+                            <span>Ingredientes Naturales</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button onclick="history.back()" class="btn btn-outline-primary btn-lg w-100">
+                            Volver
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-4">Le Petit Olivier</h5>
+                    <p>Cosméticos y cuidado de la piel naturales, hechos en Francia con ingredientes de la más alta calidad.</p>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.instagram.com/lepetitolivierchile/" class="text-white me-3" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 mb-4">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white-50">Inicio</a></li>
+                        <li><a href="../products.html" class="text-white-50">Productos</a></li>
+                        <li><a href="../history.html" class="text-white-50">Nosotros</a></li>
+                        <li><a href="../faq.html" class="text-white-50">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h6>Información</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../faq.html" class="text-white-50">Preguntas Frecuentes</a></li>
+                        <li><a href="#" class="text-white-50">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h6>Contacto</h6>
+                    <p class="text-white-50">
+                        <i class="fas fa-map-marker-alt me-2"></i> Santiago, Chile<br>
+                        <i class="fas fa-instagram me-2 mt-2"></i> @lepetitolivierchile
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="bg-white-50">
+            
+            <div class="text-center pt-3">
+                <p class="mb-0 text-white-50">&copy; 2026 Le Petit Olivier. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainProductImage').src = src;
+        }
+    </script>
+</body>
+</html>

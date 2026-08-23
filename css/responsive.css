@@ -1,0 +1,203 @@
+/* Optimized Responsiveness for Le Petit Olivier */
+
+/* Custom Variables for Mobile */
+:root {
+    --mobile-padding: 40px 0;
+    --section-gap: 30px;
+}
+
+/* Global Reset for Mobile to prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* --- Tablets and Small Laptops (max-width: 991px) --- */
+@media (max-width: 991px) {
+    .navbar-brand img {
+        height: 75px;
+    }
+    
+    .hero-section {
+        padding: 0 !important;
+        text-align: center;
+    }
+    
+    #heroCarousel .carousel-item {
+        height: 540px;
+    }
+}
+
+/* --- Mobile Devices (max-width: 768px) --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .navbar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .navbar-brand img {
+        height: 65px;
+    }
+    
+    .brand-name {
+        font-size: 1.5rem;
+    }
+    
+    body {
+        padding-top: 85px; /* Adjust for fixed navbar height on mobile */
+    }
+    
+    /* Section Spacing */
+    section:not(.hero-section), main.container {
+        padding: var(--mobile-padding) !important;
+    }
+
+    .hero-section {
+        padding: 0 !important;
+    }
+    
+    /* Carousel Adjustments */
+    #locationCarousel .carousel-item img {
+        max-height: 300px !important;
+        width: 100% !important;
+        object-fit: contain !important;
+    }
+    
+    #heroCarousel .carousel-item {
+        height: 560px;
+    }
+
+    #heroCarousel .carousel-item img {
+        max-height: none !important;
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .hero-card {
+        padding: 24px 18px !important;
+        margin: 0 10px;
+    }
+
+    .hero-card h1 {
+        font-size: 2rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .hero-card p.lead {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 12%;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 35px;
+        height: 35px;
+        background-color: rgba(44, 85, 48, 0.6) !important;
+        border-radius: 50%;
+    }
+}
+
+/* --- Small Mobile Devices (max-width: 576px) --- */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+        margin-bottom: 30px !important;
+    }
+
+    #heroCarousel .carousel-item {
+        height: 600px;
+    }
+
+    .hero-card h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .hero-card p.lead {
+        font-size: 0.88rem !important;
+    }
+    
+    /* Stack Hero Buttons */
+    .hero-section .d-flex.gap-3 {
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .hero-section .btn {
+        width: 100% !important;
+        padding: 12px 20px;
+    }
+    
+    /* Stack Filter Buttons */
+    .products-page main .d-flex.justify-content-between {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .products-page main .filter-btn {
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    .navbar-brand img {
+        height: 55px;
+    }
+    
+    /* Footer Spacing */
+    .footer .col-md-4, 
+    .footer .col-md-2, 
+    .footer .col-md-3 {
+        margin-bottom: 40px !important;
+        text-align: center;
+    }
+    
+    .footer .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+    
+    /* Product Grid for Mobile */
+    #featured-products-grid .col-md-4,
+    #products-grid .col-md-4 {
+        margin-bottom: 30px;
+    }
+    
+    /* Better spacing for certification items */
+    .certification-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* --- Extra Small Devices (max-width: 375px) --- */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1.85rem;
+    }
+    
+    .navbar-brand img {
+        height: 50px;
+    }
+}
+
